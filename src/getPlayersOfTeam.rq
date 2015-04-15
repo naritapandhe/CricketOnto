@@ -1,0 +1,13 @@
+PREFIX rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: 		<http://www.w3.org/2002/07/owl#>
+PREFIX xsd: 		<http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: 		<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cricket: 	<http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#>
+select *
+where
+{ 
+	?s rdf:type cricket:Team .
+	OPTIONAL { ?s cricket:hasPlayer ?o  } . 
+
+}
+ORDER BY ?s

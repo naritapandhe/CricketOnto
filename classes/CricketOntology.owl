@@ -1,0 +1,1007 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY cricket "http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#"
+     xml:base="http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:cricket="http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdf:Description rdf:about="&xsd;string">
+        <rdfs:comment>Represents the type of sport</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#hasAnInstanceOf -->
+
+    <owl:ObjectProperty rdf:about="&cricket;hasAnInstanceOf">
+        <rdfs:range rdf:resource="&cricket;Match"/>
+        <rdfs:domain rdf:resource="&cricket;Sport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#hasFieldUmpire -->
+
+    <owl:ObjectProperty rdf:about="&cricket;hasFieldUmpire">
+        <rdfs:range rdf:resource="&cricket;FieldUmpire"/>
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#hasMatchBetween -->
+
+    <owl:ObjectProperty rdf:about="&cricket;hasMatchBetween">
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+        <rdfs:range rdf:resource="&cricket;Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#hasMatchType -->
+
+    <owl:ObjectProperty rdf:about="&cricket;hasMatchType">
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+        <rdfs:range rdf:resource="&cricket;MatchType"/>
+        <owl:inverseOf rdf:resource="&cricket;isMatchTypeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#hasPlayer -->
+
+    <owl:ObjectProperty rdf:about="&cricket;hasPlayer">
+        <rdfs:range rdf:resource="&cricket;Player"/>
+        <rdfs:domain rdf:resource="&cricket;Team"/>
+        <owl:inverseOf rdf:resource="&cricket;isPlayerOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#hasTVUmpire -->
+
+    <owl:ObjectProperty rdf:about="&cricket;hasTVUmpire">
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+        <rdfs:range rdf:resource="&cricket;TVUmpire"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#isFieldUmpireOf -->
+
+    <owl:ObjectProperty rdf:about="&cricket;isFieldUmpireOf">
+        <rdfs:domain rdf:resource="&cricket;FieldUmpire"/>
+        <rdfs:range rdf:resource="&cricket;Match"/>
+        <owl:inverseOf rdf:resource="&cricket;hasFieldUmpire"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#isIntiatedIn -->
+
+    <owl:ObjectProperty rdf:about="&cricket;isIntiatedIn">
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+        <rdfs:range rdf:resource="&cricket;Sport"/>
+        <owl:inverseOf rdf:resource="&cricket;hasAnInstanceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#isMatchTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&cricket;isMatchTypeOf">
+        <rdfs:range rdf:resource="&cricket;Match"/>
+        <rdfs:domain rdf:resource="&cricket;MatchType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#isPlayerOf -->
+
+    <owl:ObjectProperty rdf:about="&cricket;isPlayerOf">
+        <rdfs:domain rdf:resource="&cricket;Player"/>
+        <rdfs:range rdf:resource="&cricket;Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#isTVUmpireOf -->
+
+    <owl:ObjectProperty rdf:about="&cricket;isTVUmpireOf">
+        <rdfs:range rdf:resource="&cricket;Match"/>
+        <rdfs:domain rdf:resource="&cricket;TVUmpire"/>
+        <owl:inverseOf rdf:resource="&cricket;hasTVUmpire"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MatchDate -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;MatchDate">
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MatchLocation -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;MatchLocation">
+        <rdfs:comment>This property represents the location of the match being played</rdfs:comment>
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MatchType -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;MatchType">
+        <rdfs:domain rdf:resource="&cricket;Match"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#NumberOfInnings -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;NumberOfInnings">
+        <rdfs:domain rdf:resource="&cricket;MatchType"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#NumberOfOvers -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;NumberOfOvers">
+        <rdfs:domain rdf:resource="&cricket;MatchType"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#PlayerName -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;PlayerName">
+        <rdfs:comment>This property represents the name of player</rdfs:comment>
+        <rdfs:domain rdf:resource="&cricket;Player"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#PlayerType -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;PlayerType">
+        <rdfs:comment>This property represents the type of player i.e. either a Batsman or a Bowler</rdfs:comment>
+        <rdfs:domain rdf:resource="&cricket;Player"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Runs -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;Runs">
+        <rdfs:domain rdf:resource="&cricket;Player"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#SportName -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;SportName">
+        <rdfs:comment>This property represents the type of sport i.e. either Cricket or Football. Currently, this covers concepts only related to Cricket</rdfs:comment>
+        <rdfs:domain rdf:resource="&cricket;Sport"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#TeamCountry -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;TeamCountry">
+        <rdfs:comment>This property represents the country to which the team belongs to</rdfs:comment>
+        <rdfs:domain rdf:resource="&cricket;Team"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#TeamOvers -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;TeamOvers">
+        <rdfs:domain rdf:resource="&cricket;Team"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#TeamRuns -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;TeamRuns">
+        <rdfs:domain rdf:resource="&cricket;Team"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#TeamWickets -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;TeamWickets">
+        <rdfs:domain rdf:resource="&cricket;Team"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#UmpireCountry -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;UmpireCountry">
+        <rdfs:domain rdf:resource="&cricket;Umpire"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#UmpireName -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;UmpireName">
+        <rdfs:domain rdf:resource="&cricket;Umpire"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Wickets -->
+
+    <owl:DatatypeProperty rdf:about="&cricket;Wickets">
+        <rdfs:domain rdf:resource="&cricket;Player"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#20OversMatch -->
+
+    <owl:Class rdf:about="&cricket;20OversMatch">
+        <rdfs:subClassOf rdf:resource="&cricket;MatchType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#50OversMatch -->
+
+    <owl:Class rdf:about="&cricket;50OversMatch">
+        <rdfs:subClassOf rdf:resource="&cricket;MatchType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#FieldUmpire -->
+
+    <owl:Class rdf:about="&cricket;FieldUmpire">
+        <rdfs:subClassOf rdf:resource="&cricket;Umpire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Match -->
+
+    <owl:Class rdf:about="&cricket;Match">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;hasMatchBetween"/>
+                <owl:onClass rdf:resource="&cricket;Team"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;hasFieldUmpire"/>
+                <owl:onClass rdf:resource="&cricket;FieldUmpire"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;hasMatchType"/>
+                <owl:onClass rdf:resource="&cricket;MatchType"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;hasTVUmpire"/>
+                <owl:onClass rdf:resource="&cricket;TVUmpire"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class is supposed to provide details of the matches being played</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MatchType -->
+
+    <owl:Class rdf:about="&cricket;MatchType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;NumberOfOvers"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;NumberOfInnings"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Player -->
+
+    <owl:Class rdf:about="&cricket;Player">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;PlayerName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;PlayerType"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;Runs"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;Wickets"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class represents individual player</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Sport -->
+
+    <owl:Class rdf:about="&cricket;Sport">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;SportName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This is the base class for the entire cricket ontology.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#TVUmpire -->
+
+    <owl:Class rdf:about="&cricket;TVUmpire">
+        <rdfs:subClassOf rdf:resource="&cricket;Umpire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Team -->
+
+    <owl:Class rdf:about="&cricket;Team">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;hasPlayer"/>
+                <owl:onClass rdf:resource="&cricket;Player"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">11</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;TeamWickets"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;TeamRuns"/>
+                <owl:someValuesFrom rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;TeamOvers"/>
+                <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;TeamCountry"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This class represents a Cricket team which contains Players</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#TestMatch -->
+
+    <owl:Class rdf:about="&cricket;TestMatch">
+        <rdfs:subClassOf rdf:resource="&cricket;MatchType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Umpire -->
+
+    <owl:Class rdf:about="&cricket;Umpire">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;UmpireCountry"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cricket;UmpireName"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#50Overs -->
+
+    <owl:NamedIndividual rdf:about="&cricket;50Overs">
+        <rdf:type rdf:resource="&cricket;50OversMatch"/>
+        <NumberOfInnings rdf:datatype="&xsd;int">2</NumberOfInnings>
+        <NumberOfOvers rdf:datatype="&xsd;int">50</NumberOfOvers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#ABdeVillers -->
+
+    <owl:NamedIndividual rdf:about="&cricket;ABdeVillers">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">30</Runs>
+        <PlayerName rdf:datatype="&xsd;string">AB de Villiers
+</PlayerName>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#AjinkyaRahane -->
+
+    <owl:NamedIndividual rdf:about="&cricket;AjinkyaRahane">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">79</Runs>
+        <PlayerName rdf:datatype="&xsd;string">Ajinkya Rahane</PlayerName>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#AleemDar -->
+
+    <owl:NamedIndividual rdf:about="&cricket;AleemDar">
+        <rdf:type rdf:resource="&cricket;FieldUmpire"/>
+        <UmpireName rdf:datatype="&xsd;string">Aleem Dar</UmpireName>
+        <UmpireCountry rdf:datatype="&xsd;string">Pakistan</UmpireCountry>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#Cricket -->
+
+    <owl:NamedIndividual rdf:about="&cricket;Cricket">
+        <rdf:type rdf:resource="&cricket;Sport"/>
+        <SportName rdf:datatype="&xsd;string">Cricket</SportName>
+        <hasAnInstanceOf rdf:resource="&cricket;SouthAfricaVSIndia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#DA_Miller -->
+
+    <owl:NamedIndividual rdf:about="&cricket;DA_Miller">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">22</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">David Miller</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#DWSteyn -->
+
+    <owl:NamedIndividual rdf:about="&cricket;DWSteyn">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">1</Runs>
+        <Wickets rdf:datatype="&xsd;int">1</Wickets>
+        <PlayerType rdf:datatype="&xsd;string">Bowler</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Dale Steyn</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#FduPlessis -->
+
+    <owl:NamedIndividual rdf:about="&cricket;FduPlessis">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">55</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Allrounder</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Faf du Plessis</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#HMAmla -->
+
+    <owl:NamedIndividual rdf:about="&cricket;HMAmla">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">22</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Hashim Amla</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#ImranTahir -->
+
+    <owl:NamedIndividual rdf:about="&cricket;ImranTahir">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">1</Wickets>
+        <Runs rdf:datatype="&xsd;int">8</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Bowler</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Imran Tahir</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#India -->
+
+    <owl:NamedIndividual rdf:about="&cricket;India">
+        <rdf:type rdf:resource="&cricket;Team"/>
+        <TeamRuns rdf:datatype="&xsd;int">307</TeamRuns>
+        <TeamOvers rdf:datatype="&xsd;decimal">50.0</TeamOvers>
+        <TeamWickets rdf:datatype="&xsd;int">7</TeamWickets>
+        <TeamCountry rdf:datatype="&xsd;string">India</TeamCountry>
+        <hasPlayer rdf:resource="&cricket;AjinkyaRahane"/>
+        <hasPlayer rdf:resource="&cricket;MMSharma"/>
+        <hasPlayer rdf:resource="&cricket;MSDhoni"/>
+        <hasPlayer rdf:resource="&cricket;MShami"/>
+        <hasPlayer rdf:resource="&cricket;RAJadeja"/>
+        <hasPlayer rdf:resource="&cricket;RAshwin"/>
+        <hasPlayer rdf:resource="&cricket;RohitSharma"/>
+        <hasPlayer rdf:resource="&cricket;ShikharDhawan"/>
+        <hasPlayer rdf:resource="&cricket;SureshRaina"/>
+        <hasPlayer rdf:resource="&cricket;UTYadav"/>
+        <hasPlayer rdf:resource="&cricket;ViratKohli"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#JPDuminy -->
+
+    <owl:NamedIndividual rdf:about="&cricket;JPDuminy">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">6</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Jean-Paul Duminy</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MMSharma -->
+
+    <owl:NamedIndividual rdf:about="&cricket;MMSharma">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">2</Wickets>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Mohit Sharma</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MMorkel -->
+
+    <owl:NamedIndividual rdf:about="&cricket;MMorkel">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">2</Runs>
+        <Wickets rdf:datatype="&xsd;int">2</Wickets>
+        <PlayerType rdf:datatype="&xsd;string">Bowler</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Morne Morkel</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MSDhoni -->
+
+    <owl:NamedIndividual rdf:about="&cricket;MSDhoni">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">18</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">MS Dhoni </PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#MShami -->
+
+    <owl:NamedIndividual rdf:about="&cricket;MShami">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">2</Wickets>
+        <PlayerType rdf:datatype="&xsd;string">Bowler</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Mohammad Shami</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#QdeKock -->
+
+    <owl:NamedIndividual rdf:about="&cricket;QdeKock">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">7</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Quinton de Kock</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#RAJadeja -->
+
+    <owl:NamedIndividual rdf:about="&cricket;RAJadeja">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">1</Wickets>
+        <Runs rdf:datatype="&xsd;int">2</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Allrounder</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Ravindra Jadeja</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#RA_Kettleborough -->
+
+    <owl:NamedIndividual rdf:about="&cricket;RA_Kettleborough">
+        <rdf:type rdf:resource="&cricket;FieldUmpire"/>
+        <UmpireCountry rdf:datatype="&xsd;string">England
+</UmpireCountry>
+        <UmpireName rdf:datatype="&xsd;string">RA Kettleborough</UmpireName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#RAshwin -->
+
+    <owl:NamedIndividual rdf:about="&cricket;RAshwin">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">3</Wickets>
+        <Runs rdf:datatype="&xsd;int">5</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Allrounder</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Ravichandran Ashwin</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#RohitSharma -->
+
+    <owl:NamedIndividual rdf:about="&cricket;RohitSharma">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">0</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Rohit Sharma</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#SJ_Davis -->
+
+    <owl:NamedIndividual rdf:about="&cricket;SJ_Davis">
+        <rdf:type rdf:resource="&cricket;TVUmpire"/>
+        <UmpireName rdf:datatype="&xsd;string">SJ Davis
+</UmpireName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#ShikharDhawan -->
+
+    <owl:NamedIndividual rdf:about="&cricket;ShikharDhawan">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">137</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Shikhar Dhawan</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#SouthAfrica -->
+
+    <owl:NamedIndividual rdf:about="&cricket;SouthAfrica">
+        <rdf:type rdf:resource="&cricket;Team"/>
+        <TeamWickets rdf:datatype="&xsd;int">11</TeamWickets>
+        <TeamRuns rdf:datatype="&xsd;int">177</TeamRuns>
+        <TeamOvers rdf:datatype="&xsd;decimal">40.2</TeamOvers>
+        <TeamCountry rdf:datatype="&xsd;string">South Africa</TeamCountry>
+        <hasPlayer rdf:resource="&cricket;ABdeVillers"/>
+        <hasPlayer rdf:resource="&cricket;DA_Miller"/>
+        <hasPlayer rdf:resource="&cricket;DWSteyn"/>
+        <hasPlayer rdf:resource="&cricket;FduPlessis"/>
+        <hasPlayer rdf:resource="&cricket;HMAmla"/>
+        <hasPlayer rdf:resource="&cricket;ImranTahir"/>
+        <hasPlayer rdf:resource="&cricket;JPDuminy"/>
+        <hasPlayer rdf:resource="&cricket;MMorkel"/>
+        <hasPlayer rdf:resource="&cricket;QdeKock"/>
+        <hasPlayer rdf:resource="&cricket;VDPhilander"/>
+        <hasPlayer rdf:resource="&cricket;WDParnell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#SouthAfricaVSIndia -->
+
+    <owl:NamedIndividual rdf:about="&cricket;SouthAfricaVSIndia">
+        <rdf:type rdf:resource="&cricket;Match"/>
+        <MatchDate rdf:datatype="&xsd;string">22 February 2015</MatchDate>
+        <MatchLocation rdf:datatype="&xsd;string">Melbourne Cricket Ground</MatchLocation>
+        <hasMatchType rdf:resource="&cricket;50Overs"/>
+        <hasFieldUmpire rdf:resource="&cricket;AleemDar"/>
+        <hasMatchBetween rdf:resource="&cricket;India"/>
+        <hasFieldUmpire rdf:resource="&cricket;RA_Kettleborough"/>
+        <hasTVUmpire rdf:resource="&cricket;SJ_Davis"/>
+        <hasMatchBetween rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#SureshRaina -->
+
+    <owl:NamedIndividual rdf:about="&cricket;SureshRaina">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">6</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Suresh Raina</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#UTYadav -->
+
+    <owl:NamedIndividual rdf:about="&cricket;UTYadav">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">0</Wickets>
+        <PlayerType rdf:datatype="&xsd;string">Bowler</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Umesh Yadav</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#VDPhilander -->
+
+    <owl:NamedIndividual rdf:about="&cricket;VDPhilander">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">0</Wickets>
+        <Runs rdf:datatype="&xsd;int">0</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Allrounder</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Vernon Philander</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#ViratKohli -->
+
+    <owl:NamedIndividual rdf:about="&cricket;ViratKohli">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Runs rdf:datatype="&xsd;int">46</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Batsman</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Virat Kohli</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;India"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#WDParnell -->
+
+    <owl:NamedIndividual rdf:about="&cricket;WDParnell">
+        <rdf:type rdf:resource="&cricket;Player"/>
+        <Wickets rdf:datatype="&xsd;int">1</Wickets>
+        <Runs rdf:datatype="&xsd;int">17</Runs>
+        <PlayerType rdf:datatype="&xsd;string">Bowler</PlayerType>
+        <PlayerName rdf:datatype="&xsd;string">Wayne Parnell</PlayerName>
+        <isPlayerOf rdf:resource="&cricket;SouthAfrica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cricket;AleemDar"/>
+            <rdf:Description rdf:about="&cricket;RA_Kettleborough"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cricket;ABdeVillers"/>
+            <rdf:Description rdf:about="&cricket;DA_Miller"/>
+            <rdf:Description rdf:about="&cricket;DWSteyn"/>
+            <rdf:Description rdf:about="&cricket;FduPlessis"/>
+            <rdf:Description rdf:about="&cricket;HMAmla"/>
+            <rdf:Description rdf:about="&cricket;ImranTahir"/>
+            <rdf:Description rdf:about="&cricket;JPDuminy"/>
+            <rdf:Description rdf:about="&cricket;MMorkel"/>
+            <rdf:Description rdf:about="&cricket;QdeKock"/>
+            <rdf:Description rdf:about="&cricket;VDPhilander"/>
+            <rdf:Description rdf:about="&cricket;WDParnell"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cricket;AjinkyaRahane"/>
+            <rdf:Description rdf:about="&cricket;HMAmla"/>
+            <rdf:Description rdf:about="&cricket;MMSharma"/>
+            <rdf:Description rdf:about="&cricket;MSDhoni"/>
+            <rdf:Description rdf:about="&cricket;MShami"/>
+            <rdf:Description rdf:about="&cricket;RAJadeja"/>
+            <rdf:Description rdf:about="&cricket;RAshwin"/>
+            <rdf:Description rdf:about="&cricket;RohitSharma"/>
+            <rdf:Description rdf:about="&cricket;ShikharDhawan"/>
+            <rdf:Description rdf:about="&cricket;SureshRaina"/>
+            <rdf:Description rdf:about="&cricket;UTYadav"/>
+            <rdf:Description rdf:about="&cricket;ViratKohli"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cricket;India"/>
+            <rdf:Description rdf:about="&cricket;SouthAfrica"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cricket;20OversMatch"/>
+            <rdf:Description rdf:about="&cricket;50OversMatch"/>
+            <rdf:Description rdf:about="&cricket;TestMatch"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&cricket;AjinkyaRahane"/>
+            <rdf:Description rdf:about="&cricket;MMSharma"/>
+            <rdf:Description rdf:about="&cricket;MSDhoni"/>
+            <rdf:Description rdf:about="&cricket;MShami"/>
+            <rdf:Description rdf:about="&cricket;RAJadeja"/>
+            <rdf:Description rdf:about="&cricket;RAshwin"/>
+            <rdf:Description rdf:about="&cricket;RohitSharma"/>
+            <rdf:Description rdf:about="&cricket;ShikharDhawan"/>
+            <rdf:Description rdf:about="&cricket;SureshRaina"/>
+            <rdf:Description rdf:about="&cricket;UTYadav"/>
+            <rdf:Description rdf:about="&cricket;ViratKohli"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

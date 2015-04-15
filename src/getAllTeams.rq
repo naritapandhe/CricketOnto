@@ -1,0 +1,14 @@
+PREFIX rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: 		<http://www.w3.org/2002/07/owl#>
+PREFIX xsd: 		<http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX cricket: 	<http://www.semanticweb.org/admin/ontologies/2015/2/11/cricket#>
+SELECT ?Team ?TeamCountry ?TeamRuns ?TeamWickets ?TeamOvers
+WHERE {
+?Team rdf:type cricket:Team .
+?Team cricket:TeamCountry ?TeamCountry .
+?Team cricket:TeamRuns ?TeamRuns .
+?Team cricket:TeamWickets ?TeamWickets .
+?Team cricket:TeamOvers ?TeamOvers .
+}
+ORDER BY ?TeamCountry
